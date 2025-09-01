@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureNet - Soluciones Integrales en Infraestructura IT y Ciberseguridad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a2463;
+            --secondary: #61a0af;
+            --accent: #e63946;
+            --light: #f1faee;
+            --dark: #1d3557;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header y Navegación */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.8)), url('https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Servicios */
+        .services {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-content h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 1rem 0;
+            flex-grow: 1;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        /* Proceso de trabajo */
+        .process {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        /* Paquetes de servicios */
+        .packages {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            border: 1px solid #eee;
+        }
+        
+        .package-card.featured {
+            transform: scale(1.05);
+            border: 2px solid var(--secondary);
+            z-index: 1;
+        }
+        
+        .package-card.featured::before {
+            content: 'MÁS POPULAR';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .package-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .package-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .package-price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .package-features {
+            padding: 1.5rem;
+            list-style: none;
+        }
+        
+        .package-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-features li i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        .package-footer {
+            padding: 0 1.5rem 1.5rem;
+            text-align: center;
+        }
+        
+        /* Sobre Nosotros */
+        .about {
+            padding: 5rem 0;
+            background-color: #f1f5f9;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-members {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid var(--secondary);
+        }
+        
+        /* Contacto */
+        .contact {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-form {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .package-card.featured {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .team-members {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Secure<span>Net</span></div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#paquetes">Paquetes</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Infraestructura IT Completa y Ciberseguridad</h1>
+            <p>Soluciones integrales desde la instalación eléctrica hasta la concienciación en ciberseguridad</p>
+            <a href="#contacto" class="btn">Solicitar Auditoría Gratuita</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios Especializados</h2>
+                <p>Ofrecemos soluciones completas adaptadas a las necesidades específicas de tu empresa</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-plug"></i> Instalación Eléctrica</h3>
+                        <p>Infraestructura eléctrica especializada para salas de servidores y puestos de trabajo.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Troncal eléctrico para servidores</li>
+                            <li><i class="fas fa-check-circle"></i> Circuitos dedicados y estabilizados</li>
+                            <li><i class="fas fa-check-circle"></i> Sistemas UPS y SAI de respaldo</li>
+                            <li><i class="fas fa-check-circle"></i> Tomas especializadas para equipos IT</li>
+                            <li><i class="fas fa-check-circle"></i> Puestas a tierra y protecciones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-ethernet"></i> Cableado de Red</h3>
+                        <p>Infraestructura de cableado estructurado para conectividad confiable y de alto rendimiento.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Cableado categoría 6A/7 certificado</li>
+                            <li><i class="fas fa-check-circle"></i> Instalación de canalizaciones</li>
+                            <li><i class="fas fa-check-circle"></i> Tomas de red en ubicaciones estratégicas</li>
+                            <li><i class="fas fa-check-circle"></i> Patch panels y organización de racks</li>
+                            <li><i class="fas fa-check-circle"></i> Certificación y documentación completa</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-router"></i> Redes Inalámbricas y VLANs</h3>
+                        <p>Implementación de redes WiFi profesionales con segmentación y seguridad avanzada.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Configuración de routers profesionales</li>
+                            <li><i class="fas fa-check-circle"></i> Creación de VLANs segmentadas</li>
+                            <li><i class="fas fa-check-circle"></i> puntos de acceso de alto rendimiento</li>
+                            <li><i class="fas fa-check-circle"></i> Segregación de redes por departamentos</li>
+                            <li><i class="fas fa-check-circle"></i> Gestión centralizada de la red</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-laptop"></i> Configuración de Equipos</h3>
+                        <p>Preparación y optimización de estaciones de trabajo según necesidades específicas.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Instalación y configuración de SO</li>
+                            <li><i class="fas fa-check-circle"></i> Implementación de políticas de seguridad</li>
+                            <li><i class="fas fa-check-circle"></i> Configuración de software especializado</li>
+                            <li><i class="fas fa-check-circle"></i> Optimización del rendimiento</li>
+                            <li><i class="fas fa-check-circle"></i> Backup inicial y recuperación</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-tools"></i> Soporte Técnico</h3>
+                        <p>Asistencia técnica especializada para resolver incidencias y mantener la operatividad.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Soporte remoto y presencial</li>
+                            <li><i class="fas fa-check-circle"></i> Resolución de incidencias</li>
+                            <li><i class="fas fa-check-circle"></i> Mantenimiento preventivo</li>
+                            <li><i class="fas fa-check-circle"></i> Actualizaciones y parches de seguridad</li>
+                            <li><i class="fas fa-check-circle"></i> Monitorización proactiva</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Capacitación y Concienciación</h3>
+                        <p>Formación especializada para usuarios y equipos técnicos en ciberseguridad.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check-circle"></i> Capacitación en uso de equipos y software</li>
+                            <li><i class="fas fa-check-circle"></i> Programas de concienciación en ciberseguridad</li>
+                            <li><i class="fas fa-check-circle"></i> Simulaciones de phishing controladas</li>
+                            <li><i class="fas fa-check-circle"></i> Buenas prácticas de seguridad</li>
+                            <li><i class="fas fa-check-circle"></i> Material de apoyo y recordatorios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso de Trabajo -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Proceso de Trabajo</h2>
+                <p>Metodología estructurada para garantizar resultados óptimos en cada proyecto</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Evaluación Inicial</h3>
+                    <p>Analizamos tus necesidades actuales y planes de crecimiento para diseñar la solución ideal.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Diseño de Solución</h3>
+                    <p>Creamos un plan detallado con diagramas de infraestructura y especificaciones técnicas.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Implementación</h3>
+                    <p>Ejecutamos la instalación con metodologías probadas y documentación en tiempo real.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Soporte Continuo</h3>
+                    <p>Ofrecemos mantenimiento y soporte continuo para garantizar el máximo rendimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes de Servicios -->
+    <section class="packages" id="paquetes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Paquetes de Servicios</h2>
+                <p>Soluciones adaptadas a diferentes necesidades y presupuestos</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Básico</h3>
+                        <div class="package-price">€2,499<span>/proyecto inicial</span></div>
+                        <p>Ideal para pequeñas oficinas</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Instalación eléctrica básica</li>
+                        <li><i class="fas fa-check"></i> Cableado de red para 10 puestos</li>
+                        <li><i class="fas fa-check"></i> Configuración inicial de equipos</li>
+                        <li><i class="fas fa-check"></i> Red WiFi básica</li>
+                        <li><i class="fas fa-times"></i> Soporte técnico continuo</li>
+                        <li><i class="fas fa-times"></i> Capacitación avanzada</li>
+                    </ul>
+                    <div class="package-footer">
+                        <a href="#contacto" class="btn btn-outline">Solicitar</a>
+                    </div>
+                </div>
+                
+                <div class="package-card featured">
+                    <div class="package-header">
+                        <h3>Profesional</h3>
+                        <div class="package-price">€4,999<span>/proyecto inicial</span></div>
+                        <p>Para empresas en crecimiento</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Instalación eléctrica completa</li>
+                        <li><i class="fas fa-check"></i> Cableado estructurado para 25 puestos</li>
+                        <li><i class="fas fa-check"></i> Configuración avanzada de equipos</li>
+                        <li><i class="fas fa-check"></i> Red WiFi profesional con VLANs</li>
+                        <li><i class="fas fa-check"></i> Soporte técnico 6 meses</li>
+                        <li><i class="fas fa-check"></i> Capacitación básica</li>
+                    </ul>
+                    <div class="package-footer">
+                        <a href="#contacto" class="btn">Solicitar</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Empresarial</h3>
+                        <div class="package-price">€8,999<span>/proyecto inicial</span></div>
+                        <p>Soluciones completas para empresas</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Infraestructura eléctrica premium</li>
+                        <li><i class="fas fa-check"></i> Cableado certificado para 50+ puestos</li>
+                        <li><i class="fas fa-check"></i> Configuración premium con seguridad avanzada</li>
+                        <li><i class="fas fa-check"></i> Red WiFi empresarial con múltiples VLANs</li>
+                        <li><i class="fas fa-check"></i> Soporte técnico 12 meses</li>
+                        <li><i class="fas fa-check"></i> Capacitación y concienciación completa</li>
+                    </ul>
+                    <div class="package-footer">
+                        <a href="#contacto" class="btn btn-outline">Solicitar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Equipo</h2>
+                <p>Expertos en infraestructura IT y ciberseguridad trabajando juntos para tu seguridad</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Por qué elegirnos</h2>
+                    <p>En SecureNet combinamos experiencia en infraestructura física IT y ciberseguridad para ofrecer soluciones integrales. Entendemos que la seguridad no es solo tecnología digital, sino también la base física que la sustenta.</p>
+                    <p>Nuestro enfoque se basa en comprender primero tu negocio para después implementar las medidas de seguridad más adecuadas, sin comprometer la productividad o usabilidad.</p>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Especialista en Ciberseguridad">
+                            <h4>Alex García</h4>
+                            <p>Especialista en Ciberseguridad</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Especialista en Infraestructura">
+                            <h4>Martín Rodríguez</h4>
+                            <p>Especialista en Infraestructura</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Nuestro equipo de trabajo" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>¿Listo para modernizar la infraestructura de tu empresa? Contáctanos para una consulta gratuita</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p><strong>Email:</strong> info@securenet.com</p>
+                    <p><strong>Teléfono:</strong> +34 912 345 678</p>
+                    <p><strong>Dirección:</strong> Calle Tecnología 123, Madrid</p>
+                    <p><strong>Horario:</strong> Lun - Vie: 9:00 - 18:00</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envíanos un mensaje</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                            <select id="service">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="electrico">Instalación Eléctrica</option>
+                                <option value="cableado">Cableado de Red</option>
+                                <option value="wifi">Redes WiFi y VLANs</option>
+                                <option value="configuracion">Configuración de Equipos</option>
+                                <option value="soporte">Soporte Técnico</option>
+                                <option value="capacitacion">Capacitación y Concienciación</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SecureNet</h3>
+                    <p>Soluciones integrales de infraestructura IT y ciberseguridad para empresas.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proceso">Proceso</a></li>
+                        <li><a href="#paquetes">Paquetes</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Instalación Eléctrica</a></li>
+                        <li><a href="#">Cableado de Red</a></li>
+                        <li><a href="#">Redes WiFi y VLANs</a></li>
+                        <li><a href="#">Configuración de Equipos</a></li>
+                        <li><a href="#">Soporte Técnico</a></li>
+                        <li><a href="#">Capacitación</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SecureNet. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
