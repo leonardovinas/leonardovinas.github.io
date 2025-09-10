@@ -704,3 +704,16 @@ a {
     color: rgba(255, 255, 255, 0.3); }
   .resume-item *:last-child {
     margin-bottom: 0; }
+
+/* Tamaño por defecto: XS y SM */
+.calenda {
+  width: 20px;
+  height: auto; /* mantiene proporción */
+}
+
+/* MD (≥768px) */
+@media (min-width: 768px) {
+  .calenda {
+    width: 24px;
+  }
+}
