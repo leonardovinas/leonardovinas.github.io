@@ -724,3 +724,28 @@ a {
 .primary:hover{
   color:#ff4000;
 }
+/* Contact Icons - Responsive Layout */
+#section-contact .d-flex {
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#section-contact .contact-icon {
+  flex: 0 0 100%; /* celular: ancho completo */
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  #section-contact .contact-icon {
+    flex: 0 0 45%; /* tablet: dos columnas */
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #section-contact .contact-icon {
+    flex: 0 0 auto; /* desktop: ancho según contenido */
+    margin: 0 1rem;
+  }
+}
