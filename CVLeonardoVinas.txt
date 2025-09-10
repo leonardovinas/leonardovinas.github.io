@@ -1,0 +1,73 @@
+Leonardo Facundo Viñas
+
+Buenos Aires, Argentina
+vinas.leonardo@gmail.com
+linkedin.com/in/vinasleonardo
+leonardovinas.github.io
+credly.com/users/leonardo-vinas/badges#credly
+
+Perfil Profesional
+Profesional de Soporte Técnico IT con más de 5 años de experiencia en:
+
+Resolución de incidentes de hardware y software (Nivel 1 y 2).
+Administración de redes y servidores Windows.
+Configuración de routers, firewalls y seguridad informática.
+Capacitación a usuarios, optimización de sistemas y soporte personalizado.
+
+Cuento con conocimientos en:
+Redes (CCNA 200-301)
+Linux (LPIC-1)
+Seguridad informática y ciberseguridad
+Herramientas SIEM/SOC (Splunk, Splunk Enterprise Security)
+
+Busco continuar mi desarrollo en áreas de administración de servidores, proyectos de ciberseguridad y optimización de entornos IT.
+
+Experiencia Profesional
+Especialista en Soporte Técnico
+SubliartDesign – Bernal, Buenos Aires | nov. 2017 – actualidad
+Soporte Nivel 1 y 2 en hardware, software y sistemas operativos.
+Administración y mantenimiento de redes LAN.
+Configuración de routers, switches y firewalls.
+Gestión y actualización de sistemas de seguridad.
+Capacitación y asistencia técnica a usuarios finales.
+Mantenimiento preventivo y correctivo de PCs y periféricos.
+
+Operador – Blue Team (SOC Training)
+Ekoparty Hackademy – remoto | mar. 2025 – jul. 2025
+Formación práctica en operaciones SOC y ciberseguridad defensiva.
+Uso de herramientas SIEM (Splunk, Splunk Enterprise Security).
+Apoyo en el entrenamiento de profesionales en detección de incidentes y respuesta.
+
+Diseñador Gráfico
+SubliartDesign – Bernal, Buenos Aires | nov. 2017 – jun. 2023
+Creación y desarrollo de productos digitales y gráficos.
+Manejo avanzado de Adobe Illustrator, Photoshop y Figma.
+
+Data Entry Operator
+Zanchetti – Buenos Aires | sept. 2013 – nov. 2017
+Carga de datos en plataforma SupplierPortal (Arcos Dorados).
+Gestión de facturación y soporte administrativo.
+
+Educación
+Tecnicatura Universitaria en Programación Informática – Universidad Nacional de Quilmes (incompleta)
+
+Certificaciones
+Técnico en Ciberseguridad – Academia de Ciberseguridad (2025)
+Blue Team Operator - hackademy.ekoparty (2025)
+Linux Professional Institute LPIC-1 101
+Redes Informáticas CCNA 200-301
+Técnico en Reparación de PC
+Cybrary – IT and Cybersecurity Foundations
+
+Conocimientos Técnicos
+Sistemas Operativos: Windows, Linux
+Redes: TCP/IP, VLANs, Routing, Switching, Cisco CCNA
+Seguridad: ISO 27001, Ciberseguridad, SIEM, SOC, Firewalls
+Herramientas: Splunk, Splunk Enterprise Security
+
+Ofimática: Microsoft Excel avanzado, Microsoft Word intermedio, Data Entry
+
+Diseño: Adobe Illustrator, Photoshop, Figma, UI/UX
+
+Voluntariado
+Ekoparty 20 años (2024) – Difusión y apoyo en evento de ciberseguridad.
