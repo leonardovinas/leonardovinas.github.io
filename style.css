@@ -717,3 +717,10 @@ a {
     width: 24px;
   }
 }
+.primary{
+  color: rgb(157, 157, 157);
+}
+
+.primary:hover{
+  color:#ff4000;
+}
